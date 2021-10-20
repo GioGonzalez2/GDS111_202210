@@ -10,11 +10,13 @@
 <body>
 
     <div id="fixed"></div>
+    <div id="top"></div>
     <!--In the index.html body element, create a div with an id of "wrapper" -->
     <div id="wrapper">
+        <div id="main-header">
 
          <!--Inside of the #wrapper div, create an h1 tag that includes the following text content: Week 3 | Demo -->
-        <h1>Week 3 | Demo</h1>
+        <h1>Week 3 | <a href="https://www.google.com" target="_blank"> Demo</a></h1>
 
         <!--Below the h1, create a div with an id of "main-nav"-->
         <div id="main-nav">
@@ -24,7 +26,10 @@
             <a class="btn" href="index.html">About</a>
             <a class="btn" href="hobbies.html">Hobbies</a>
             <a class="btn" href="schools.html">Schools</a>
+
         </div><!--/ #main nav-->
+
+        </div><!--/ #main-header-->
 
         <!--Below the #main-nav, create a div with a class of "section"-->
         <div class="section">
@@ -55,6 +60,16 @@
                 <li>Anime</li>
                 <li>Sport</li>
             </ul>
+
+            <!--absolute positioning and z-index-->
+            <div id="boxes">
+
+                <div id="red"></div>
+                <div id="green"></div>
+                <div id="blue"></div>
+                
+            </div><!--/ #boxes-->
+
         </div><!--/ .section-->
 
         <div class="section">
@@ -71,7 +86,7 @@
         <!--Below the schools section, create a final div with an id of "footer"-->
         <div id="footer">
             <!--Inside of the #footer, add a paragraph tag that holds the copywrite symbol, the year, the class name, and your name-->
-            <a href="">Back To Top</a>
+            <a href="#top">Back To Top</a>
             <p>&copy; 2021 | GDS111.21 | G GONZALEZ</p>
 
         </div><!--footer-->
