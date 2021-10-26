@@ -1,0 +1,49 @@
+/*BACKGROUND-----aplies to all content unless id/class/element styles differently */
+body { 
+    background-image:url(images/background.png);
+    background-color: aliceblue;
+    color: purple;
+}
+
+div {
+
+    border: 1px solid purple;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#wrapper {
+
+    width: 1000px;
+    margin: auto;
+    box-shadow: 5px 5px 10px violet;
+    border-radius: 20px; /*rounds corners of block level elements*/
+}
+
+
+
+/*HEADER-----------*/
+
+
+/*NAV--------------*/
+
+
+/*CONTENT----------*/
+#clear {/*empty div at bottom of content to CLEAR the floats*/
+clear: both;
+border: none;}
+
+/*FOOTER-----------*/
+
+/*PAGE SPECIFIC-------------------------*/
+#left{
+
+    width: 45%;
+    float: left;
+}
+
+#right{
+
+    width: 45%;
+    float: right;
+}
