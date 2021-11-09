@@ -1,4 +1,3 @@
- /*Cascading Stylesheet for Steve unofficial website*/
  body {
     background-color: rgb(5, 42, 68);
     background-image: url(images/bg.jpg);
@@ -100,7 +99,7 @@ nav{
     border: 1px solid white;
     margin-bottom: 10px;
 }
-/*we need to CLEAR in order for the floats to stop making a mess! CLEAR property puts up a wall so stuff can't float beyond it*/
+
 
 footer {
     clear: both; /*both means left and right*/
