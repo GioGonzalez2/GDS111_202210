@@ -6,23 +6,42 @@
     color: white;
     font-size: 18px;
 }
+#wrapper{
+    width: 1000px;
+    margin: auto;
+}
 #header{
     color: thistle;
 }
 
 #buttons{ 
     background-color: white;
+    border: 1px solid black;
 }
 #content{
     background-color: black;
 }
+#nav-link{
+    
+}
 #footer {
     clear: both; /*both means left and right*/
-    width: 940px;
-    height: 40px;
     font-size: 20px;
     color: rgba(106,130,145,.5);
     text-align: center;
-    line-height: 40px;
     border-top: 2px solid #3c6777;
+}
+.section {
+    float: left;
+}
+.section-title{
+    float: right;
+}
+.hobbies{
+float: right;
+clear: both;
+}
+.bio{
+    float: left;
+    clear: both;
 }

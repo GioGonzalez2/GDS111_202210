@@ -1,4 +1,4 @@
- //RPS Part 1 Javascript -- W6D1 class
+//RPS Part 1 Javascript -- W6D1 class
 
 //create an Array that will store the images being used
 //ARRAY: it's just like a variable (so it's a data storage device) BUT it can contain more than one value
@@ -50,7 +50,7 @@ function swap(id, image) {
 function play(id) {
 
     //setting up the stored image paths (src) in JS to match the HTML ones
-    //swap() CALLS the function --> this gets the code to run!
+    //swap() CALLS the function --> this gets its code to run!
     //values supplied inside of () are passed into the parameter variables
     swap(pId[0], pics[0])
     swap(pId[1], pics[1])
@@ -82,21 +82,21 @@ function play(id) {
                 //alert the user that there has been a draw
                 alert("Bloody hell let's call it a DRAW!")
 
-                //call showResults() and pass correct values for: pchoice, c choice, results
-                showResults("Rock!", "Rock!", "It's a DRAW!")
+                //call showResults() and pass correct values for: pChoice, cChoice, Results
+                showResults("Rock!", "Rock!", "It's a DRAW XD")
 
             }
             else if (c_choice == 1) {//comp is paper
 
                 alert("You LOST to the computer!")
 
-                showResults("Rock!", "Paper", "You LOST :(ggonz")
+                showResults("Rock!", "Paper!", "You LOST :[ ")
             }
             else {//comp is scissors
 
                 alert("You WIN with your ROCK!")
 
-                showResults("Rock!", "Scissors", "You ")
+                showResults("Rock!", "Scissors!", "You WON :D")
             }
 
             //break statements breaks us out of the switch/case
@@ -150,3 +150,4 @@ function showResults(pChoice, cChoice, results) {
     document.getElementById("results").innerHTML = results
 
 }
+
