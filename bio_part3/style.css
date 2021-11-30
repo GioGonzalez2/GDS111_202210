@@ -1,47 +1,51 @@
- body {
-    background-color: rgb(5, 42, 68);
-    background-image: url(images/bg.jpg);
-    /*global font families for whole page*/
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 18px;
-}
-#wrapper{
-    width: 1000px;
-    margin: auto;
-}
-#header{
-    color: thistle;
-}
-
-#buttons{ 
-    background-color: white;
-    border: 1px solid black;
-}
-#content{
+body {
     background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    font-size: 19px;
 }
-#nav-link{
-    
+#container {
+    background-color: plum;
+    margin: auto;
+    width: 980px;
+}
+#header {
+    text-align: center;
+    background-color: thistle;
+}
+#nav {
+    background-color: black;
+    text-align: center;
+}
+.nav-link{
+    color: thistle;
+    text-align: center;
+    margin: 0px 50px 0px 50px;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color: black;
+    background-color: white;
+}
+#left {
+    margin: auto;
+    width: 450px;
+    float: left;
+}
+#right {
+    margin: auto;
+    float: right;
+    width: 450px;
 }
 #footer {
-    clear: both; /*both means left and right*/
-    font-size: 20px;
-    color: rgba(106,130,145,.5);
-    text-align: center;
-    border-top: 2px solid #3c6777;
-}
-.section {
-    float: left;
-}
-.section-title{
-    float: right;
-}
-.hobbies{
-float: right;
-clear: both;
-}
-.bio{
-    float: left;
     clear: both;
+	width: 100%;
+	padding:20px 0px;
+    text-align: center;
+    background-color: thistle;
+}
+#schooling {
+    margin: auto;
+    width: 950px;
+}
 }
