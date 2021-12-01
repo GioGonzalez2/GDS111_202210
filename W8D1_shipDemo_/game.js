@@ -67,17 +67,32 @@ function animate() {
     //move and redraw the ship!  .functions() are from ship.js [Ship()]
     ship.move()
     ship.draw()
-    }
+
+
+    // if ship leaves edge of canvas it returns at opposite side
+
+    //leaves at right returns on left
     if(ship.x > canvas.width() + 25) {
-        //if the current ship x coord is greater than
-    ship.x = -25
+        
+    ship.x = -25 //moves ships x coord
     }
+    //leaves at bottom returns at top
     if(ship.y > canvas.height() + 25) {
-    //if the current ship x coord is greater than
-    ship.x = -25
-    } 
-    if(ship.y > canvas.height() + 25) {
-    //if the current ship x coord is greater than
-    ship.x = -25
+        
+    ship.y = -25 //moves ships y coord
     }
+    //leaves at left returns on right
+    if(ship.x < 0 - 25) {
+        //0 is the x coord of left margin, 25 is the length of the ship
+        //if the current ship x coord is greater than (beyond) the canvas width + 25
+    ship.x = 825
+    }
+    //leaves at top returns at bottom
+    if(ship.y < 0 - 25) {
+        
+    ship.y = 825
+    }
+    }
+
+   
     
