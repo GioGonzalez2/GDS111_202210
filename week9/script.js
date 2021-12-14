@@ -12,6 +12,25 @@ var gameStates = []
 var currentState = 0
 var ship
 
+//IMAGE SPRITES FOR GAME
+var shipSprite = new Image()
+shipSprite.src = "images/goodguy.jpg"
+shipSprite.onload = function(){
+
+}
+var asteroidSprite = new Image()
+asteroidSprite.src = "images/amongus.jpg"
+asteroidSprite.onload = function(){
+
+}
+var flameSprite = new Image()
+flameSprite.src = "images/amongusflame.png"
+flameSprite.onload = function(){
+
+}
+
+
+
 function randomRange(high, low){
     return Math.random() * (high-low) + low;
 }
@@ -19,8 +38,8 @@ function randomRange(high, low){
 //Class for the Asteroids
 function Asteroid(){
     this.radius = randomRange(10,2);
-    this.x = randomRange(c.width - this.radius, 0 + this.radius);
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height;
+    this.x = randomRange(c.width - this.radius, 0 + this.radius ) + c.width
+    this.y = randomRange(c.height - this.radius, 0 + this.radius)            ///////deleted thing here, added above
     this.vx = randomRange(-5, -10);
     this.vy = randomRange(10,5);
     this.color = "pink";
@@ -29,7 +48,8 @@ function Asteroid(){
         context.save();
         context.beginPath();
         context.fillStyle = this.color;
-        context.arc(this.x,this.y,this.radius,0,2*Math.PI,true);
+        /*context.arc(this.x,this.y,this.radius,0,2*Math.PI,true);*/
+        context.drawImage (asteroidSprite, this.x - this.radius, this.y - this.radius, this.radius*2, this.radius*2)
         context.closePath();
         context.fill();
         context.restore();
@@ -63,7 +83,7 @@ function PlayerShip(){
         context.save();
         context.translate(this.x, this.y);
         //this drws the flame behind the ship
-        if(this.up == true){
+        if(this.right == true){
             context.save();
             //adjust the flame length for a flicker effect
             if(this.flamelength == 30){
@@ -73,16 +93,22 @@ function PlayerShip(){
                 this.flamelength = 30;
             }
             context.fillStyle = "blue";
-            context.beginPath();
+            /*context.beginPath();
             context.moveTo(0, this.flamelength);
             context.lineTo(5, 5);
             context.lineTo(-5, 5);
             context.lineTo(0, this.flamelength);
             context.closePath();
             context.fill();
-            context.restore();
+            context.restore();*/
+            /*----------------------ADDED for W10D1----------------*/
+            context.drawImage(flameSprite,-40,-20,40,40)
+            console.log("flameSprite drawImage")
+
+            /*if(invincible) { .... do somethingsssss} */
+            context.restore()
         }
-        context.beginPath();
+        /*context.beginPath();
         
         context.fillStyle = "cyan";
         context.moveTo(0, -13);
@@ -90,7 +116,9 @@ function PlayerShip(){
         context.lineTo(-10, 10);
         context.lineTo(0, -13);
         context.closePath();
-        context.fill();
+        context.fill();*/
+        context.drawImage(shipSprite,-20,-20,40,40)
+        console.log("shipSprite drawImage")
 
         context.restore();
     }
@@ -138,7 +166,7 @@ function keyPressDown(e){
       if(e.keyCode === 38){
           ship.up = true;
         }
-     if(e.keyCode === 37){
+     if(e.keyCode === 40){
          ship.left = true;
         }
         if(e.keyCode === 39){
@@ -178,7 +206,7 @@ function keyPressUp(e){
     if(e.keyCode === 38){
         ship.up = false;
     }
-    if(e.keyCode === 37){
+    if(e.keyCode === 40){
         ship.left = false;
     }
     if(e.keyCode === 39){
@@ -190,11 +218,11 @@ function keyPressUp(e){
 
 gameStates[0] = function() {
     context.save()
-    context.font = "30px Arial"
+    context.font = "30px 'Inter'"
     context.fillStyle = "white"
     context.textAlign = "center"
     context.fillText("Asteroid Avoidance", c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
+    context.font = "15px 'Inter'"
     context.fillText("Press ENTER to Start!", c.width/2, c.height/2 + 20)
     context.restore()
 }
@@ -203,7 +231,7 @@ gameStates[1] = function() {//GAMEPLAY STATE
      //display score
      context.save();
     
-     context.font = "15px Arial"
+     context.font = "15px 'Inter'"
      context.fillStyle = "white"
      context.fillText("Score: " + score.toString(), c.width - 150, 30);
      context.restore();
@@ -211,20 +239,20 @@ gameStates[1] = function() {//GAMEPLAY STATE
      //ship.vy += gravity;
  
      if(ship.up == true){
-         ship.vy = -10;
+         ship.vy = -5;
      }
      else{
-         ship.vy = 3;
+         ship.vy = 0;
      }
  
      if(ship.left == true){
-         ship.vx = -3;
+         ship.vy = 5;
      }
      else if(ship.right == true){
          ship.vx = 3;
      }
      else{
-         ship.vx = 0;
+         ship.vx = -4;
      }
  
      for(var i = 0; i<asteroids.length; i++){
@@ -249,7 +277,7 @@ gameStates[1] = function() {//GAMEPLAY STATE
              asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius);
          }
          if(gameOver == false){
-             asteroids[i].y += asteroids[i].vy;
+             asteroids[i].x += asteroids[i].vx;  /////////////////////////////changed the y's to x's
          }
          asteroids[i].draw();
      }
@@ -265,11 +293,11 @@ gameStates[1] = function() {//GAMEPLAY STATE
 
 gameStates[2] = function() {//GAME OVER STATE
     context.save()
-    context.font = "30px Arial"
+    context.font = "30px 'Inter'"
     context.fillStyle = "white"
     context.textAlign = "center"
     context.fillText("GAME OVER Your score was: " + score.toString(), c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
+    context.font = "15px 'Inter'"
     context.fillText("Press ENTER to Play Again!", c.width/2, c.height/2 + 20)
     context.restore()
 
@@ -291,8 +319,8 @@ function scoreTimer(){
     if(gameOver == false){
         score++;
         //console.log(score);
-        if(score % 5 == 0){
-            numAsteroids += 5;
+        if(score % 2 == 0){
+            numAsteroids += 10;
             console.log(numAsteroids);
         }
 
