@@ -1,5 +1,5 @@
 #container{
-    background-color:rgb(71, 4, 158);
+    background-color:red;
     width:900px;
     height:760px;
     margin:auto;
@@ -35,7 +35,7 @@
     height:auto;
     font-family: 'Inter', sans-serif;
     margin: auto;
-    color: rgb(77, 185, 247);
+    color: yellow
     
  }
   
