@@ -12,68 +12,73 @@
 <body onload="updatescreen();">
     
     <div id="wrapper">
-
+ 
         <header>
-            <!--could use heading below or impress KT with a custom graphic-->
-            <h1>Rootin Tootin | Gun Program</h1>
-            <!-- (but you WILL need some sort of image below this h1 for the heading on your assignment)-->
+           
+            <h1 id="gametitle">Rootin Tootin | Gun Program</h1>
+           
         </header>
-
-        <!--div box that holds the target image (MAKE YOUR OWN OR PULL ONE FROM ONLINE)-->
+ 
+       
         <div id="target">
-            <img src="images/dream.jpg" alt="dream" />
-        </div> <!--/ #target-->
-
-        <!--nav box that holds info and buttons for game-->
+            <img src="images/deathclaw.jpg" alt="deathclaw" id="deathclaw"/>
+        </div><!--/ #target-->
+ 
+       
         <nav>
             <!--left info box-->
             <section id="left">
-
+ 
                 <!--ammo cache-->
-                <div id="total-ammo"></div>
-
+                <p id="label">Total ammo</p>
+                <div id="total-ammo" class="ammo"></div>
+ 
                 <!--current ammo-->
-                <div id="current-ammo"></div>
-
+                <p id="label">Current ammo</p>
+                <div id="current-ammo" class="ammo"></div>
+ 
+ 
             </section><!--/ #left-->
-
+ 
             <!--right info box-->
             <div id="right">
-
+ 
                 <form>
-
-                    <p class="btn"><!--shoot button-->
+ 
+                    <p id="shootbtn" class="btn-right"><!--shoot button-->
                         <input type="button" value="SHOOT" class="shoot" onclick="shoot();"/>
                     </p>
-
-                    <p class="btn"><!--reload button-->
+ 
+                    <p id="reloadbtn" class="btn-right"><!--reload button-->
                         <input type="button" value="RELOAD" class="reload" onclick="reload();"/>
                     </p>
+ 
                 </form>
-
-            </div> <!--/ #right-->
-
+ 
+            </div><!--/ #right-->
+ 
         </nav><!--/nav-->
-
+ 
         <footer>
-            <p class="copy">&copy; 2021 | HTML & Javascript | GGONZALEZ</p>
+            <p class="copy">&copy; 2021 | HTML & Javascript | GGonzalez</p>
         </footer>
-
-
+ 
     </div><!--/ #wrapper-->
-
-    <!--HTML 5 AUDIO PLAYERS GO BELOW THIS LINE BUT INSIDE OF THE BODY! [yes, sound]-->
-
+ 
+ 
+ 
     <audio id="gun" src="sounds/Bruh-Sound-Effect.mp3">
-    
-    <p>your browser sucks and doesn't know HTML5.</p>
-
-</audio>
-
-<audio id="reload" src="sounds/m1_garand_ping.mp3">
-    
-    <p>your browser sucks and doesn't know HTML5.</p>
-
-</audio>
+   
+        <p>Your browser sucks and doesn't know HTML5.</p>
+ 
+    </audio>
+   
+   
+    <audio id="reload" src="sounds/m1_garand_ping.mp3">
+   
+        <p>Your browser sucks and doesn't know HTML5.</p>
+ 
+    </audio>
+   
 </body>
 </html>

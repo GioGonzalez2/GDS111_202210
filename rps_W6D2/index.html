@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <meta name="author" content="Jay Aguiar">
-    <!--<link rel="stylesheet" href="style.css">-->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div id="container">
 
-        <h2>Player</h2>
+        <h2 class="header">Player</h2>
         <div class="player">
 
             <!-- p = player !-->
-            <img src="images/rock.jpg" id="rock_p" onclick="play(0);"/>
-            <img src="images/paper.jpg" id="paper_p" onclick="play(1);"/>
-            <img src="images/scissors.jpg" id="scissors_p" onclick="play(2);"/>
+            <img src="images/Vaporeon.png" class="pic" id="water_p" onclick="play(0);"/>
+            <img src="images/Leafeon.png" class="pic" id="grass_p" onclick="play(1);"/>
+            <img src="images/Flareon.png" class="pic" id="fire_p" onclick="play(2);"/>
 
         </div><!--/ .player-->
 
-        <h2>Computer</h2>
+        <h2 class="header">Computer</h2>
         <div class="computer">
 
             <!-- c = computer !-->
-            <img src="images/rock.jpg" id="rock_c" />
-            <img src="images/paper.jpg" id="paper_c" />
-            <img src="images/scissors.jpg" id="scissors_c" />
+            <img src="images/Vaporeon.png" class="pic" id="water_c" />
+            <img src="images/Leafeon.png" class="pic" id="grass_c" />
+            <img src="images/Flareon.png" class="pic" id="fire_c" />
 
         </div><!--/ .player-->
 
@@ -36,9 +36,9 @@
         <br>
         
         <nav>
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+            <button class="btn" id="water">Water</button>
+            <button class="btn" id="grass">Grass</button>
+            <button class="btn" id="fire">Fire</button>
         </nav>
         <div id="result">
 

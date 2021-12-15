@@ -7,15 +7,15 @@ var pics = new Array() //creates an empty array
 
 //assign values to array -- "population"
 //[#] denotes index --> it's like a house number and array is the street name; array name + index gives access to the indiv value
-pics[0] = "images/rock.jpg"
-pics[1] = "images/paper.jpg"
-pics[2] = "images/scissors.jpg"
+pics[0] = "images/Vaporeon.png"
+pics[1] = "images/Leafeon.png"
+pics[2] = "images/Flareon.png"
 
 var pics2 = new Array()
 
-pics2[0] = "images/rock2.jpg"
-pics2[1] = "images/paper2.jpg"
-pics2[2] = "images/scissors2.jpg"
+pics2[0] = "images/VaporeonSelected.png"
+pics2[1] = "images/LeafeonSelected.png"
+pics2[2] = "images/FlareonSelected.png"
 
 //create array holding the button elements
 //document.querySelectorAll grabs all of one element type
@@ -33,10 +33,10 @@ btn[2].addEventListener("click", function (e) { play(2) })
 
 //arrays that store the player & computer options (one array for each)
 //Player ID - pId
-var pId = new Array("rock_p", "paper_p", "scissors_p") 
-//pId[1] = "paper_p"
+var pId = new Array("water_p", "grass_p", "fire_p") 
+//pId[1] = "grass_p"
 //Computer ID - cId
-var cId = new Array("rock_c", "paper_c", "scissors_c")
+var cId = new Array("water_c", "grass_c", "fire_c")
 
 //create a function that will swap the regular images with the highlighted ones (series 2 pics)
 function swap(id, image) {
@@ -75,65 +75,73 @@ function play(id) {
     switch(p_choice) {
         //cases need to be built for *every* option p_choice can be! 
 
-        //0 is ROCK
+        //0 is water
         case 0://case for when p_choice == 0
-            if (c_choice == 0) {//comp is rock
+            if (c_choice == 0) {//comp is water
 
                 //alert the user that there has been a draw
-                alert("Bloody hell let's call it a DRAW!")
+                alert("Water Absorb! There is no effect!")
 
                 //call showResults() and pass correct values for: pChoice, cChoice, Results
-                showResults("Rock!", "Rock!", "It's a DRAW XD")
+                showResults("Water!", "Water!", "It's a DRAW")
 
             }
-            else if (c_choice == 1) {//comp is paper
+            else if (c_choice == 1) {//comp is grass
 
-                alert("You LOST to the computer!")
+                alert("Grass was super effective! That hurt!")
 
-                showResults("Rock!", "Paper!", "You LOST :[ ")
+                showResults("Water!", "Grass!", "You LOST")
             }
-            else {//comp is scissors
+            else {//comp is fire
 
-                alert("You WIN with your ROCK!")
+                alert("A critical hit! You doused their flame!")
 
-                showResults("Rock!", "Scissors!", "You WON :D")
+                showResults("Water!", "Fire!", "You WON")
             }
 
             //break statements breaks us out of the switch/case
             break
 
-        //1 is PAPER
+        //1 is grass
         case 1:
-            if (c_choice == 1) {//comp is paper
+            if (c_choice == 1) {//comp is grass
 
                 //alert the user that there has been a draw
-                alert("Bloody hell let's call it a DRAW!")
+                alert("That was Anitclimactic! There is no effect!")
+
+                showResults("Grass!", "Grass!", "It's a DRAW")
             }
-            else if (c_choice == 2) {//comp is scissors
+            else if (c_choice == 2) {//comp is fire
     
-                alert("You LOST to the computer!")
+                alert("Ouch! You just got BURNED!")
+
+                showResults("Grass!", "Fire!", "You Lost")
             }
-            else {//comp is scissors
+            else {//comp is water
     
-                alert("You WIN with your PAPER!")
+                alert("Well done! You calmed the raging waters!")
+
+                showResults("Grass!", "Water!", "You WON")
             }
 
             break
-        //2 is SCISSORS
+        //2 is fire
         case 2:
 
-            if (c_choice == 2) {//comp is scissors
+            if (c_choice == 2) {//comp is fire
 
                 //alert the user that there has been a draw
-                alert("Bloody hell let's call it a DRAW!")
+                alert("It's a Draw! But now you can make some smore's!")
             }
-            else if (c_choice == 0) {//comp is rock
+            else if (c_choice == 0) {//comp is water
     
-                alert("You LOST to the computer!")
+                alert("Should've taken those swimming lessons. You LOSE!")
             }
-            else {//comp is paper
+            else {//comp is grass
     
-                alert("You WIN with your SCISSORS!")
+                alert("Great Work! That forest fire could be a problem though...")
+
+                showResults("Fire!", "Grass!", "You WON")
             }
             break
 

@@ -1,3 +1,45 @@
-body{
+#container{
+    background-color:rgb(71, 4, 158);
+    width:900px;
+    height:760px;
+    margin:auto;
+    padding:2px;
+ }
+  
+ #game{
+    width:800px;
+    height:600px;
+    margin:auto;
+    padding:2px;
+ }
+  
+ #header{
+    
+    padding:2px;
+    text-align:center;
+    font-family:'Inter', sans-serif;
+  
+ }
+  
+ #footer{
+    
+    padding:5px;
+    margin-top:10px;
+    font-family:'Inter', sans-serif;
+    text-align:center;
+ }
+  
+ body{
+    background-image:url(images/deepspace.png);
+    width:fit-content;
+    height:auto;
     font-family: 'Inter', sans-serif;
-}
+    margin: auto;
+    color: rgb(77, 185, 247);
+    
+ }
+  
+ #canvas{
+    border: 2px solid black;
+ }	
+ 

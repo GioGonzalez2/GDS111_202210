@@ -1,92 +1,123 @@
-/*six-shooter demo file*/
-
-/*styling to see the elements on the gate and gun page*/
-body {
-    background-color: rgb(8, 76, 124);
-    /*global font families for whole page*/
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 18px;
-}
-#wrapper {
-
-    width: 980px;
-    margin: auto;
-}
-
-div {
-
-    border: 1px solid lightcoral;
-    margin: 10px;
-    padding: 10px;
-}
-
-footer {
-    text-align: center;
-}
-
-header {
-    text-align: center;
-}
-nav{
-    width: 100%;/*spans 100% of the contaiing element*/
-    height: 500px;
-    background-repeat: repeat-x; /*image will only repeat horizontally*/
-    margin-bottom: 10px;
+#wrapper{
+    height:800px;
+    width:980px;
+    margin:auto;
+    border:1px solid rgb(255, 251, 0);   
+    background-color:rgb(151, 144, 144);
 }
 
 
-.btn-container {
-    width: 200px;
-    margin: auto; /*auto margin on left and right INSIDE of the nav container*/
-    height: 50px;
-    position: relative;
-    text-align: center;
-    line-height: 50px;
-}
-.btn {
-    width: 130px;
-    height: 60px;
-    color: lightcoral;
-    text-decoration: none;
-    /*center on x-axis*/
-    text-align: center;
-    /*center text on y-axis; value must match height value*/
-    line-height: 60px;
-    font-size:100px ;
-}
-.btn:hover {
-    background-color: lightcoral;
-    color: white;
-    text-shadow: 2px 2px 6px black;
+body{
+    background-color:rgb(134, 81, 10);
+    background-image:url(images/Jojobackground.png);
 }
 
-/*HOME PAGE*/
-.button-container {
-    width: 650px;
-    margin: auto; /*auto margin on left and right INSIDE of the nav container*/
-    height: 250px;
-    position: relative;
-    text-align: center;
-    line-height: 250px;
-}
-.button {
-    width: 130px;
-    height: 60px;
-    color: lightcoral;
-    text-decoration: none;
-    /*center on x-axis*/
-    text-align: center;
-    /*center text on y-axis; value must match height value*/
-    line-height: 60px;
-    font-size:100px ;
-}
-.button:hover {
-    background-color: lightcoral;
-    color: white;
-    text-shadow: 2px 2px 6px black;
+#header{
+    text-align:center;
 }
 
-#target {
-    text-align: center;
+#gamebtn{
+
+    margin-left:0px;
+    margin-top:100px;
+    text-align:center;
+    padding:50px;
+    
+}
+
+#btn{
+
+    height:150px;
+    line-height:150px;
+    width:175px;
+    margin:auto;
+    border:1px solid rgb(255, 251, 0);
+    text-align:center;
+    background-color:rgb(255, 251, 0);
+    color:black;
+    text-decoration:none;
+    
+}
+
+.game-link{
+    color:black;
+    text-decoration:none;
+    width: 500px;
+}
+
+.game-link:hover{
+    color:rgb(255, 251, 0);
+    background-color:black;
+}
+
+#left{
+    float:left;
+    position:relative;
+    top:100px;
+}
+
+.ammo{
+    float:left;
+    padding:20px;
+}
+
+
+#right{
+  position:relative;
+   float:right;
+   top:90px;
+   padding:10px;
+}
+
+.btn-right{
+    position:relative;
+    float:left;
+    padding:10px;
+
+}
+
+#shootbtn{
+    border:1px solid orangered
+    background-color:orange
+}
+
+#reloadbtn{
+    border:1px solid orangered
+    background-color:orange
+}
+
+.copy{
+    
+    margin-top:170px;
+    margin-left:350px;;
+}
+
+#total-ammo{
+    border:1px solid rgb(255, 251, 0);
+  
+}
+
+#current-ammo{
+    border:1px solid rgb(255, 251, 0);
+   
+}
+
+#label{
+    float:left;
+    padding:10px;
+}
+
+#gametitle{
+   width:500px;
+   margin:auto;
+   text-align:center;
+}
+
+#deathclaw{
+    width:300px;
+    height:auto;
+    margin-left:350px;
+}
+#homeimage{
+    padding: 50px;
 }

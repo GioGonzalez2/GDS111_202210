@@ -14,17 +14,17 @@ var ship
 
 //IMAGE SPRITES FOR GAME
 var shipSprite = new Image()
-shipSprite.src = "images/goodguy.jpg"
+shipSprite.src = "images/newgoodguy.png"
 shipSprite.onload = function(){
 
 }
 var asteroidSprite = new Image()
-asteroidSprite.src = "images/amongus.jpg"
+asteroidSprite.src = "images/amongus.png"
 asteroidSprite.onload = function(){
 
 }
 var flameSprite = new Image()
-flameSprite.src = "images/amongusflame.png"
+flameSprite.src = "images/newamogusflame.png"
 flameSprite.onload = function(){
 
 }

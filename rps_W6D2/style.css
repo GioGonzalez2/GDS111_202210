@@ -1,6 +1,11 @@
 body{
     display:flex;
     justify-content:center;
+    color:rgb(236, 255, 221);
+    font-size:20px;
+    font-family: Verdana, Tahoma, sans-serif;
+    background-image:url(images/grassbackground.jpg);
+    text-shadow: black;
 }
 nav{
     display:flex;
@@ -8,20 +13,33 @@ nav{
 }
 #container{
     box-sizing:border-box;
-    width:1018px;
+    width:1020px;
     border:1px solid black;
     padding:7px;
-    margin: auto;
-    background-color: darkblue;
+    background-image:url(images/scratches.jpg);
+    text-align: center;
 }
 canvas{
     border: 1px solid black;
     box-sizing:border-box;
 }
+ 
+.pic{
+    width: 75px;
+    height:auto;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+
+}
+
 a:link, a:visited{
     display:inline-block;
     background-color:yellow;
     padding:10px;
     margin:20px;
 
+}
+.btn{
+    text-decoration: none;
 }
