@@ -1,0 +1,18 @@
+this.collideOnSide(_object, _side, _axis)
+	{
+		let direction = [
+			this.hitBoxWidth,
+			this.hitBoxHeight
+		]
+		var dx = this.x - this[_side].x
+		var dy = this.x - this[_side].y
+		for(let i=0; i<(direction[Math.sin(this.x-this[_side]).x]*.75)/2; i+=2)
+			{
+				if(_object.overlap(this[_side].x+i) || _object.overlap(this[_side].x-i))
+				{
+					return true
+				}
+			}
+		return false;
+		
+	}
