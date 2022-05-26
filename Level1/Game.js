@@ -8,24 +8,37 @@ canvas = document.getElementById("canvas");
 context = canvas.getContext("2d")
 
 player = new Player();
+player.width = 100;
+player.height = 100;
 player.vx = 4;
-player.vy = -4;
+player.vy = 4;
 
 timer = setInterval(animate, interval)
 
 
 function animate(){
      //colission --->>
-     if(player.x > canvas.width - player.width/2){
+     player.move();
+
+    if(player.x > canvas.width - player.width/2){
+        player.x = canvas.width - player.width/2
         player.vx = -player.vx; 
     }
     if(player.x < 0 + player.width/2){
+       player.x = 0 + player.width/2
         player.vx = -player.vx;
     }
-   
+    if(player.y > canvas.height - player.height/2){
+        player.y = canvas.height - player.height/2
+        player.vy = -player.vy; 
+    }
+    if(player.y < 0 + player.height/2){
+        player.y = 0 + player.height/2
+        player.vy = -player.vy;
+    }
+
     context.clearRect(0,0,canvas.width, canvas.height);	
     
-    player.move();
  
     player.draw();
 }

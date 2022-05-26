@@ -26,6 +26,7 @@ function Player(){
         this.move = function(){
     
             this.x += this.vx;
+            this.y += this.vy;
         }
     
     }
