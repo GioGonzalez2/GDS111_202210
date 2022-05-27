@@ -16,7 +16,8 @@ player1.width = 16;
 player1.color = "Blue";
 player1.vx = 0;
 player1.vy = 0;
-//--------------------------------------
+//-------------------------------------
+
 
 timer = setInterval(animate, interval)
 
@@ -29,14 +30,26 @@ function animate(){
     if(w){
 
         //console.log("moving up") ---
-        player1.y += -4;
+        player1.y += -3;
     }
     if(s){
 
         //console.log("moving down") ---
-        player1.y += 4;
+        player1.y += 3;
     }
-	//update the canvas here
+    //----------------------------------->>>>
+
+    //Collision for P1 ------------------>>>>
+    if(player1.y < 60){
+
+	    player1.y = 60;
+
+    }
+    if(player1.y + 60 > canvas.height){
+
+	    player1.y = canvas.height - 60;
+
+    }
+    
     player1.drawRect();
-    Ball.drawCircle();
 }
