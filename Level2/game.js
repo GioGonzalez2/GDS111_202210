@@ -2,6 +2,7 @@ var canvas;
 var context;
 var timer;
 var player1;
+var Ball
 var interval = 1000/60;
 
 //canvas/context
@@ -18,6 +19,16 @@ player1.vx = 0;
 player1.vy = 0;
 //-------------------------------------
 
+//Ball --------------------------------
+Ball = new GameObject();
+Ball.x = canvas.width/2;
+Ball.y = canvas.height/2;
+Ball.height = 50;
+Ball.width = 50;
+Ball.color = "teal";
+Ball.vx = -4;
+Ball.vy = 4;
+//-------------------------------------
 
 timer = setInterval(animate, interval)
 
@@ -37,7 +48,6 @@ function animate(){
         //console.log("moving down") ---
         player1.y += 3;
     }
-    //----------------------------------->>>>
 
     //Collision for P1 ------------------>>>>
     if(player1.y < 60){
@@ -50,6 +60,30 @@ function animate(){
 	    player1.y = canvas.height - 60;
 
     }
+
+    //Ball move / canvas collision ------------------------->>>>
+    Ball.move();
+    if(Ball.x > canvas.width - Ball.width/2){
+
+        Ball.vx = -Ball.vx;
+
+    }
+    if(Ball.x < 0 + Ball.width/2){
     
+        Ball.vx = -Ball.vx;
+       
+     }
+    if(Ball.y > canvas.height - Ball.height/2){
+
+        Ball.vy = -Ball.vy;
+        
+    }
+    if(Ball.y < 0 + Ball.height/2){
+
+        Ball.vy = -Ball.vy;
+       
+    }
+	//update the canvas here
     player1.drawRect();
+    Ball.drawCircle();
 }
