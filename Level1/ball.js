@@ -1,21 +1,21 @@
 var canvas;
 var context;
 var timer;
-//1000 ms or 1 second / FPS
+
 var interval = 1000/60;
 var player;
 
 function Player()
 {
-	//player's location
+	
 	this.x = canvas.width/2;
 	this.y = canvas.height/2;
 	
-	//player's dimensions
+	
 	this.width = 100;
 	this.height = 100;
 	
-	//player's velocity or speed on each axis
+	
 	this.vx = 0;
 	this.vy = 0;
 	
@@ -28,7 +28,7 @@ function Player()
 		context.save();
 		context.fillStyle = this.color;
 		context.translate(this.x, this.y);
-		context.arc(100, 100, 50, 0, 360 * Math.PI/2, false);
+		context.arc(100, 100, 50, 0, 360 * Math.PI/2);
         context.fillStyle = "red";
         context.fill()
 		context.restore();
@@ -55,7 +55,7 @@ function Player()
 function animate()
 {
 	//Erase the Screen
-	context.clearRect(0,0,canvas.width, canvas.height);	
+	context.clearRect(0,0,1000, 800);	
 	
 	//Move the Player
 	player.x += 2;
