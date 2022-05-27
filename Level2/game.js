@@ -16,7 +16,7 @@ player1.width = 16;
 player1.color = "Blue";
 player1.vx = 0;
 player1.vy = 0;
-//-------------------------------------
+//--------------------------------------
 
 timer = setInterval(animate, interval)
 
@@ -25,8 +25,18 @@ function animate(){
 
     //clear canvas here
     context.clearRect(0,0,canvas.width, canvas.height);	
+    // Player 1 Move -------------------->>>>
+    if(w){
 
+        //console.log("moving up") ---
+        player1.y += -4;
+    }
+    if(s){
 
+        //console.log("moving down") ---
+        player1.y += 4;
+    }
 	//update the canvas here
     player1.drawRect();
+    Ball.drawCircle();
 }

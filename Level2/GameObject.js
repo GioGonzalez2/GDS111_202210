@@ -1,6 +1,7 @@
 //Paddle Class Object ---------------------------------------------------->>>>>
 function GameObject(x,y,w,h,color){
 
+
 //Updates screen and draws player ---------->>>>
 this.drawRect = function(){
     context.save();
@@ -10,6 +11,5 @@ this.drawRect = function(){
     context.restore();
     
 }
-
 
 }
