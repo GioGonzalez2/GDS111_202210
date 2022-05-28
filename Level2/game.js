@@ -83,6 +83,18 @@ function animate(){
         Ball.vy = -Ball.vy;
        
     }
+     //Ball & Paddle Collision ---
+     if(Ball.hitTestObject(player1)){
+
+        Ball.vx = -Ball.vx;
+        Ball.x = player1.x + player1.width/2 + Ball.width/2;
+        if(Ball.y > player1.y){
+            Ball.vy = 3;
+        }
+        if(Ball.y < player1.y){
+            Ball.vy = -3;
+        }
+    }
 	//update the canvas here
     player1.drawRect();
     Ball.drawCircle();
