@@ -68,11 +68,6 @@ function animate(){
         Ball.vx = -Ball.vx;
 
     }
-    if(Ball.x < 0 + Ball.width/2){
-    
-        Ball.vx = -Ball.vx;
-       
-     }
     if(Ball.y > canvas.height - Ball.height/2){
 
         Ball.vy = -Ball.vy;
@@ -82,6 +77,13 @@ function animate(){
 
         Ball.vy = -Ball.vy;
        
+    }
+      //Loops ball back to Screen center ->>>>
+      if(Ball.x < 0){
+
+        Ball.x = canvas.width/2;
+        Ball.y = canvas.height/2;
+        Ball.vx = -Ball.vx;
     }
      //Ball & Paddle Collision ---
      if(Ball.hitTestObject(player1)){
@@ -95,6 +97,8 @@ function animate(){
             Ball.vy = -3;
         }
     }
+    
+    
 	//update the canvas here
     player1.drawRect();
     Ball.drawCircle();
