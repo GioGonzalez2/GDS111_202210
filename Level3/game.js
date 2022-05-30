@@ -3,6 +3,7 @@ var context;
 var timer;
 var player1;
 var Ball
+var Net;
 var interval = 1000/60;
 
 var player1Wins = 0;
@@ -43,6 +44,16 @@ Ball.color = "teal";
 Ball.vx = -4;
 Ball.vy = 4;
 //-------------------------------------
+
+//Net ---------------------------------
+Net = new GameObject();
+Net.x = canvas.width/2;
+Net.y = canvas.height/2;
+Net.height = canvas.height;
+Net.width = 10;
+Net.color = "black";
+//-------------------------------------
+
 
 timer = setInterval(animate, interval)
 
@@ -167,16 +178,17 @@ function animate(){
 
     
     //draw on/update the canvas here
+    Net.drawRect();
     player1.drawRect();
     p2.drawRect();
     Ball.drawCircle();
 
     //P1
-    context.fillText("PLAYER 1", canvas.width/2 - 75, 20)
-    context.fillText(player1Wins, canvas.width/2 - 55, 30);
+    context.fillText("PLAYER 1", canvas.width/2 - 195, 20,)
+    context.fillText(player1Wins, canvas.width/2 - 175, 30);
 
     //P2
-    context.fillText("PLAYER 2", canvas.width/2 + 30, 20)
-    context.fillText(p2Wins,  canvas.width/2 + 50, 30);
+    context.fillText("PLAYER 2", canvas.width/2 + 150, 20)
+    context.fillText(p2Wins,  canvas.width/2 + 170, 30);
 
 }
