@@ -97,11 +97,6 @@ function animate(){
 
     //Ball move / canvas collision ------------------------->>>>
     Ball.move();
-    if(Ball.x > canvas.width - Ball.width/2){
-
-        Ball.vx = -Ball.vx;
-
-    }
     if(Ball.y > canvas.height - Ball.height/2){
 
         Ball.vy = -Ball.vy;
@@ -111,13 +106,6 @@ function animate(){
 
         Ball.vy = -Ball.vy;
        
-    }
-      //Loops ball back to Screen center ->>>>
-      if(Ball.x < 0){
-
-        Ball.x = canvas.width/2;
-        Ball.y = canvas.height/2;
-        Ball.vx = -Ball.vx;
     }
      //Ball & Paddle Collision ---
      if(Ball.hitTestObject(player1)){
@@ -131,7 +119,33 @@ function animate(){
             Ball.vy = -3;
         }
     }
+      if(Ball.hitTestObject(p2)){
+
+        Ball.vx = -Ball.vx;
+        Ball.x = p2.x - p2.width/2 - Ball.width/2;
+        if(Ball.y > p2.y - p2.height/3){
+            Ball.vy += 5;
+        }
+        if(Ball.y < p2.y + p2.height/6){
+            Ball.vy += -5;
+        }
+    }
+
+    
     //Loops ball back to Screen center ->>>>
+    //P2 scores
+    if(Ball.x < 0){
+
+        Ball.x = canvas.width/2;
+        Ball.y = canvas.height/2;
+        Ball.vx = -3;
+        Ball.vy = 0;
+        
+        console.log(p2Wins);
+    }
+
+    
+
     //P1 scores
     if(Ball.x > canvas.width){
 
@@ -140,11 +154,9 @@ function animate(){
         Ball.vx = 3;
         Ball.vy = 0;
 
-        player1Wins += 1;
-        
         console.log(player1Wins);
     }
-    
+
     
     //draw on/update the canvas here
     player1.drawRect();
