@@ -9,6 +9,8 @@ var interval = 1000/60;
 var player1Wins = 0;
 var p2Wins = 0
 
+var img = document.getElementById("ball");
+
 
 //canvas/context
 canvas = document.getElementById("canvas");
@@ -181,7 +183,7 @@ function animate(){
     Net.drawRect();
     player1.drawRect();
     p2.drawRect();
-    Ball.drawCircle();
+    
 
     //P1
     context.fillText("PLAYER 1", canvas.width/2 - 195, 20,)
@@ -190,5 +192,9 @@ function animate(){
     //P2
     context.fillText("PLAYER 2", canvas.width/2 + 150, 20)
     context.fillText(p2Wins,  canvas.width/2 + 170, 30);
+
+    //ball img
+    context.drawImage(img, Ball.x - 30, Ball.y - 30, 50, 50);
+    
 
 }
