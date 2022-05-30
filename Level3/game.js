@@ -5,6 +5,10 @@ var player1;
 var Ball
 var interval = 1000/60;
 
+var player1Wins = 0;
+var p2Wins = 0
+
+
 //canvas/context
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d")
@@ -141,6 +145,8 @@ function animate(){
         Ball.vx = -3;
         Ball.vy = 0;
         
+        p2Wins += 1;
+
         console.log(p2Wins);
     }
 
@@ -154,6 +160,8 @@ function animate(){
         Ball.vx = 3;
         Ball.vy = 0;
 
+        player1Wins += 1;
+
         console.log(player1Wins);
     }
 
@@ -162,4 +170,13 @@ function animate(){
     player1.drawRect();
     p2.drawRect();
     Ball.drawCircle();
+
+    //P1
+    context.fillText("PLAYER 1", canvas.width/2 - 75, 20)
+    context.fillText(player1Wins, canvas.width/2 - 55, 30);
+
+    //P2
+    context.fillText("PLAYER 2", canvas.width/2 + 30, 20)
+    context.fillText(p2Wins,  canvas.width/2 + 50, 30);
+
 }
