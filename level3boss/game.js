@@ -27,7 +27,7 @@ ball.x = canvas.width/2;
 ball.y = canvas.height/2;
 ball.height = 80;
 ball.width = 80;
-ball.color = "teal";
+ball.color = "magenta";
 ball.vx = 5;
 ball.vy = 0;
 ball.force = 5;
@@ -37,7 +37,7 @@ player.x = canvas.width/2;
 player.y = 550;
 player.height = 40;
 player.width = 250;
-player.color = "blue";
+player.color = "cyan";
 player.vx = 0;
 player.vy = 0;
 
@@ -144,8 +144,8 @@ function animate()
     //# of bounces on paddle...
     context.font = "bold 16px Arial";
     context.fillStyle = "grey";
-    context.fillText("Score:", 480, 30)
-    context.fillText(score,535, 30);
+    context.fillText("Score:", 80, 30)
+    context.fillText(score,35, 30);
 
     //draws line....
     context.save();
