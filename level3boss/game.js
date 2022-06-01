@@ -52,30 +52,25 @@ function animate()
     {
          //console.log("moving left")   ---
          player.vx += player.ax * -player.force;
-         player.vx +=  player.ax * -player.force;
     }
     if(d)
     {
          //console.log("moving right ") ---
          player.vx += player.ax * player.force;
-         player.vx +=  player.ax * player.force;
     }
     if(lft)
     {
         //console.log("moving left")   ---
         player.vx += player.ax * -player.force;
-        player.vx +=  player.ax * -player.force;
     }
     if(rght)
     {
         //console.log("moving right ") ---
         player.vx += player.ax * player.force;
-        player.vx +=  player.ax * player.force;
+
     }
     //--------------Apply Gravity to the Velocity Y-----------------------------------------
      player.x += player.vx;
-     player.y += player.vy;
-	player.vx *= frictionX;
 	player.x += player.vx;
      //Collision for Player -------------->>>>
     if(player.x < 125)
@@ -125,7 +120,7 @@ function animate()
     if(ball.hitTestObject(player)){
 
      score++;
-     ball.vy = -ball.vy - 10;
+     ball.vy =- 35;
      ball.y = player.y - player.height/2 - ball.height/2;
      if(ball.x < player.x - player.width/6){
           ball.vx = -ball.force;
@@ -144,8 +139,8 @@ function animate()
     //# of bounces on paddle...
     context.font = "bold 16px Arial";
     context.fillStyle = "grey";
-    context.fillText("Score:", 80, 30)
-    context.fillText(score,35, 30);
+    context.fillText("Score:", 80, 25)
+    context.fillText(score,135, 25);
 
     //draws line....
     context.save();
