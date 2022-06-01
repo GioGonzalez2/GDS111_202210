@@ -121,10 +121,12 @@ function animate()
 	//---------Run this program first.
 	//---------Change the following condition so that the player pushes the wall-------------------------------------------------
 
+	
 	while(platform1.hitTestPoint(player.left()))
-	{
-		player.x++;
-	}
+    {
+        platform1.x--;
+    }
+	
 	
 	
 
