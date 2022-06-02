@@ -1,6 +1,6 @@
 // variables for objects within game...
 var ball;
-var player;
+var paddle;
 //other variables...
 var canvas;
 var context;
@@ -18,8 +18,6 @@ var vx;
 canvas = document.getElementById("canvas");
 context = canvas.getContext("2d")
 
-// ask how to draw a line because you forgot...
-
 //Start of Game Code...
 //Ball vvv...
 ball = new GameObject();
@@ -32,14 +30,14 @@ ball.vx = 5;
 ball.vy = 0;
 ball.force = 5;
 //Player vvv...
-player = new GameObject();
-player.x = canvas.width/2;
-player.y = 550;
-player.height = 40;
-player.width = 250;
-player.color = "cyan";
-player.vx = 0;
-player.vy = 0;
+paddle = new GameObject();
+paddle.x = canvas.width/2;
+paddle.y = 550;
+paddle.height = 40;
+paddle.width = 250;
+paddle.color = "cyan";
+paddle.vx = 0;
+paddle.vy = 0;
 
 timer = setInterval(animate, interval)
 
