@@ -44,8 +44,8 @@ var y = canvas.height - 200;
 		platform1.color = "#66ff33";
 	
 	sun = new GameObject();
-		sun.width = 200;
-		sun.height = 200;
+		sun.width = 0;
+		sun.height = 0;
 		sun.x = canvas.width/3;
 		sun.y = canvas.height/3;
 		sun.color = "yellow";
