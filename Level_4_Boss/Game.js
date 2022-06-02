@@ -89,6 +89,15 @@ function animate(){
         player.vy =- 35;
         player.y = paddle.y - paddle.height/2 - player.height/2;
     }
+    if(health == 0)
+	{
+		context.font = "bold 30px Arial";
+		context.textAlign = "center";
+		context.fillStyle = "black";
+		context.fillText("You Lose", canvas.width/2, canvas.height/2);
+		context.fillText("Ty.", canvas.width/2, canvas.height/2 + 100);
+	}
+
     
 }
     //# of bounces on paddle...
